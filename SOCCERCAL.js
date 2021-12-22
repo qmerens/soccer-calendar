@@ -45,7 +45,7 @@ Module.register("SOCCERCAL", {
 		if (notification==="DATA") {
 			Log.log(data)
 			this.config.setup.forEach(function(v){
-				v.nextgame=self.getnextgame(v.source,data.schedule)
+				v.nextgame=self.getnextgame(v.teamname,data.schedule)
 			})
 
 			self.updateDom()

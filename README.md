@@ -27,7 +27,7 @@ modules: [
     position: 'top_right',  // This can be any of the regions.
     config: {
       // See 'Configuration options' for more information.
-      setup:[{source:"Futsal CM (sec. 4)",alias:"Quentin"},{source:"Futsal AM Or (sec. 1)",alias:"Virgile"}]
+      setup:[{teamname:"Futsal CM (sec. 4)",alias:"Quentin"},{teamname:"Futsal AM Or (sec. 1)",alias:"Virgile"}]
 
     }
   }
