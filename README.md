@@ -11,4 +11,4 @@ Users can use this module to experiment a few things on MagicMirror:
 
 ## Installation instructions 
 
-## Comfiguration 
+## Configuration 
