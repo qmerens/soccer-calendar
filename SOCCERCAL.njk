@@ -1,23 +1,29 @@
 
 <div>
 	<table>
+	<thead>
 		<tr>
 			<th>Player</th>
 			<th>Game</th>
 		</tr>
+	</thead>
+		<tbody>
+		{% for player in setup %}
 		<tr>
-			<td>Quentin</td>
-			<td>{{Quentin.datetime}}
+			<td>{{player.alias}}</td>
+			{% if player.nextgame %}
+			<td>{{player.nextgame.datetime}}
 				<br>
-			{{Quentin.opponent}}
+			{{player.nextgame.opponent}}
 				</td>
-		</tr>
-		<tr>
-			<td>Virgile</td>
-			<td>{{Virgile.datetime}}
+			{% else %}
+			<td>---
 				<br>
-			{{Virgile.opponent}}
+			---
 				</td>
+			{% endif %}			
 		</tr>
+		{% endfor %}
+		</tbody>
 	</table>
 </div>

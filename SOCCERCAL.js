@@ -5,10 +5,10 @@
  * MIT Licensed.
  */
 Module.register("SOCCERCAL", {
-	// Default module config.
-		data:{"Quentin":{opponent:"---",datetime:"---"},"Virgile":{opponent:"---",datetime:"---"}},
+
+
 	defaults: {
-		data:{"Quentin":{opponent:"---",datetime:"---"},"Virgile":{opponent:"---",datetime:"---"}},
+		setup:[{source:"Futsal CM (sec. 4)",alias:"Quentin"},{source:"Futsal AM Or (sec. 1)",alias:"Virgile"}]
 	},
 	start:function() {
 		Log.log("Sending notification")
@@ -17,7 +17,7 @@ Module.register("SOCCERCAL", {
 			self.sendSocketNotification("DATA","")
 			setInterval(function(){
 				self.sendSocketNotification("DATA","")
-				},60*60*24*1000)
+				},60*60*1000) // update every hour
 			}
 			,1000)
 	},
@@ -44,18 +44,22 @@ Module.register("SOCCERCAL", {
 		var self=this
 		if (notification==="DATA") {
 			Log.log(data)
-			self.config.data.Quentin=self.getnextgame("Futsal CM (sec. 4)",data.schedule)
-			self.config.data.Virgile=self.getnextgame("Futsal AM Or (sec. 1)",data.schedule)
+			this.config.setup.forEach(function(v){
+				v.nextgame=self.getnextgame(v.source,data.schedule)
+			})
+
 			self.updateDom()
 		}
 	},
+
 
 	getTemplate: function () {
 		return "SOCCERCAL.njk";
 	},
 
 	getTemplateData: function () {
-		return this.config.data;
+
+		return this.config;
 	}
 	
 });
