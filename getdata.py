@@ -39,6 +39,5 @@ x = requests.post(url, data = myobj,headers=headers)
 # In[4]:
 
 print(x.text)
-with open('data.json', 'w') as f:
-    f.write(x.text)
+
 
