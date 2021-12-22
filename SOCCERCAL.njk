@@ -1,18 +1,23 @@
-<!--
-	Use ` | safe` to allow html tages within the text string.
-	https://mozilla.github.io/nunjucks/templating.html#autoescaping
--->
+
 <div>
 	<table>
 		<tr>
-			<th>Name</th>
-			<th>Time @Opponent</th>
+			<th>Player</th>
+			<th>Game</th>
 		</tr>
 		<tr>
 			<td>Quentin</td>
-			<td>yeet</td>
+			<td>{{Quentin.datetime}}
+				<br>
+			{{Quentin.opponent}}
+				</td>
+		</tr>
 		<tr>
 			<td>Virgile</td>
-			<td>yeetus</td>
+			<td>{{Virgile.datetime}}
+				<br>
+			{{Virgile.opponent}}
+				</td>
+		</tr>
 	</table>
 </div>
