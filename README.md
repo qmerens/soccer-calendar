@@ -2,7 +2,7 @@
 
 The 'SOCCERCAL' module is a costum module for [MagicMirror](https://github.com/MichMich/MagicMirror). The idea was to connect to the a calendar webpage published on [Sainte Anne de Lachine](https://secondaire.lachine.sainteanne.ca/calendrier-soccer/) and extract some teams and then display the next game in a module.
 
-The module will display the upcoming games for those 2 teams.
+The module will display the upcoming games for those teams.
 
 Users can use this module to experiment a few things on MagicMirror:
 - Use of the sendNotification function
